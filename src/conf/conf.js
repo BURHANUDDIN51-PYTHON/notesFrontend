@@ -1,5 +1,5 @@
 const conf = {
-    URL: String(import.meta.env.VITE_API_BASE_URL),
+    URL: "https://notesbackend-jbtz.onrender.com"
 }
 
 export default conf.URL
