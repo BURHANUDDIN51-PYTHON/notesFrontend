@@ -14,15 +14,21 @@ export default function Sidebar({ activeCategory, setActiveCategory }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  let previousWidth = window.innerWidth;
 
   // Add useEffect to handle screen resize
   useEffect(() => {
     const handleResize = () => {
-        const isKeyboard = window.innerHeight < 500; // or any threshold
-        if (isKeyboard) return;
-        setIsCollapsed(window.innerWidth < 768); // Collapse on mobile
+       if (window.innerWidth !== previousWidth) {
+        // Only update sidebar if width changed
+        previousWidth = window.innerWidth;
 
+        if (window.innerWidth < 1024) {
+          setIsCollapsed(true);
+        } else {
+          setIsCollapsed(false);
+        }
+      } 
     };
 
     window.addEventListener('resize', handleResize);
