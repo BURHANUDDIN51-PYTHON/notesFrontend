@@ -1,6 +1,6 @@
 import AddNote from "./addNote/AddNote";
 import NoteCard from "./notecard/NoteCard";
-import NoteDetail from "./notedetail/Notedetail";
+import NoteDetail from './notedetail/NoteDetail'
 import Sidebar from "./sidebar/Sidebar";
 import NoteGrid from "./notesgrid/NoteGrid";
 import Loader from "./loader/Loader";
