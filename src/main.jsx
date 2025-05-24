@@ -9,7 +9,7 @@ import AddNotePage from './pages/AddNotePage.jsx';
 import EditPage from './pages/EditPage.jsx';
 import { Provider } from 'react-redux';
 import store from './store/store.js';
-import CategoryNotes from './pages/categorynotes.jsx';
+import CategoryNotes from './pages/CategoryNotes.jsx'
 
 const router = createBrowserRouter([
   {
