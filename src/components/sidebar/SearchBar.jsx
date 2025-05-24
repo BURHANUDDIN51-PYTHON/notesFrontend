@@ -1,6 +1,6 @@
 import { useSearch } from "../../context/searchContext";
 
-export default function SearchBar({handleSidebarToggle}) {
+export default function SearchBar({isTyping, setIsTyping}) {
   const { searchTerm, handleSearch} = useSearch();
   return (
     <div className="px-4 pb-4">
@@ -12,7 +12,8 @@ export default function SearchBar({handleSidebarToggle}) {
           type="text"
           placeholder="Search notes..."
           className="w-full pl-10 pr-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 border-none focus:outline-none focus:ring-1 focus:ring-blue-400"
-          onFocus={handleSidebarToggle}
+          onFocus={() => setIsTyping(true)}
+          onBlur={() => setIsTyping(false)} 
         />
         {/* Going to be conditional */}
         {searchTerm && (
