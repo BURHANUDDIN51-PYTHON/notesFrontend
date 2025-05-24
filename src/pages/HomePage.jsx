@@ -1,6 +1,5 @@
-import React, { useState,useEffect, useCallback } from 'react'
 import { NoteGrid } from '../components/index.js'
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector} from 'react-redux';
 import { useSearch } from '../context/searchContext.jsx'
 
 

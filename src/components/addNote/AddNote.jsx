@@ -3,14 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addNote } from '../../features/notesSlice/notesSlice';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import TinyMCEEditor from '../toolbar/TinyMCEEditor';
 import { toast } from "react-toastify";
-import URL from '../../conf/conf'
+import URL from '../../conf/conf.js'
 
 
 export default function AddNote() {
-
+  
   // Initialize form data with saved data
   const { 
     register, 
@@ -26,7 +25,6 @@ export default function AddNote() {
  
   const titleLength = watch('title')?.length || 0;
   const categories = useSelector(state => state.notes.categories[0]);
-  const [isDarkMode, setIsDarkMode] = useState(document.documentElement.classList)
   const navigate = useNavigate();
   
   const onSubmit =(data) => {    

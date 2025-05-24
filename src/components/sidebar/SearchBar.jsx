@@ -1,4 +1,3 @@
-import { useState, useEffect, useRef } from "react";
 import { useSearch } from "../../context/searchContext";
 
 export default function SearchBar() {

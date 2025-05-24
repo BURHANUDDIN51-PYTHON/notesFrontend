@@ -1,6 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
 import URL from '../conf/conf';
 
 const SearchContext = createContext();
@@ -9,8 +8,6 @@ export const SearchProvider = ({children}) => {
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const notes = useSelector(state => state.notes.notes);
-    // UseEffect for fetching search results
     useEffect(() => {
         const fetchSearchResults = async () => {
             setIsLoading(true);

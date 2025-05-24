@@ -1,7 +1,7 @@
 import parse from 'html-react-parser';
 import DOMPurify from 'dompurify';
 
-function FormattedPreview({ html, wordLimit = 10, className}) {
+function FormattedPreview({ html, wordLimit = 10, className=''}) {
   const getFirstWordsWithFormatting = () => {
     const cleanHtml = DOMPurify.sanitize(html);
     let wordCount = 0;
@@ -44,7 +44,7 @@ function FormattedPreview({ html, wordLimit = 10, className}) {
   };
 
   return (
-    <div className="formatted-preview text-gray-600 dark:text-gray-300 text-sm mb-">
+    <div className={`formatted-preview text-gray-600 dark:text-gray-300 text-sm mb-1 ${className}`}>
       {parse(getFirstWordsWithFormatting())}
     </div>
   );

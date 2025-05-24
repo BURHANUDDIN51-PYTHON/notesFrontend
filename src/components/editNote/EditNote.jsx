@@ -1,11 +1,11 @@
 import { useForm} from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
-import { addNote, updateNote } from '../../features/notesSlice/notesSlice';
+import { updateNote } from '../../features/notesSlice/notesSlice';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import TinyMCEEditor from '../toolbar/TinyMCEEditor';
 import { toast } from "react-toastify";
-import URL from '../../conf/conf';
+import URL from '../../conf/conf.js' 
 
 export default function EditNote({ note, slug}) {
 
@@ -15,7 +15,6 @@ export default function EditNote({ note, slug}) {
     handleSubmit, 
     formState: { errors },
     watch, 
-    reset,
     control,
   } = useForm({
     defaultValues: {

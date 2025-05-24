@@ -1,4 +1,4 @@
-import React, { useState, useRef} from 'react';
+import React, { useState} from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { addCategory } from '../../features/notesSlice/notesSlice';
