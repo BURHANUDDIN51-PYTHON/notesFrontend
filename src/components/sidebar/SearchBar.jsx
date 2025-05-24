@@ -12,8 +12,7 @@ export default function SearchBar({isTyping, setIsTyping}) {
           type="text"
           placeholder="Search notes..."
           className="w-full pl-10 pr-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 border-none focus:outline-none focus:ring-1 focus:ring-blue-400"
-          onFocus={() => setIsTyping(true)}
-          onBlur={() => setIsTyping(false)} 
+        
         />
         {/* Going to be conditional */}
         {searchTerm && (

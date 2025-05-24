@@ -12,7 +12,6 @@ export default function Sidebar({ activeCategory, setActiveCategory }) {
 
   const categories = useSelector((state) => state.notes.categories);
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [isTyping, setIsTyping] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -20,9 +19,10 @@ export default function Sidebar({ activeCategory, setActiveCategory }) {
   // Add useEffect to handle screen resize
   useEffect(() => {
     const handleResize = () => {
-      if (!isTyping){
+        const isKeyboard = window.innerHeight < 500; // or any threshold
+        if (isKeyboard) return;
         setIsCollapsed(window.innerWidth < 768); // Collapse on mobile
-      }
+
     };
 
     window.addEventListener('resize', handleResize);
@@ -95,7 +95,7 @@ export default function Sidebar({ activeCategory, setActiveCategory }) {
           )}
           <ThemeToggle />
         </div>
-        {!isCollapsed && <SearchBar isTyping={isTyping} setIsTyping={setIsTyping} />}
+        {!isCollapsed && <SearchBar />}
         
         <div className="flex-1 overflow-y-auto px-2">
            <button
