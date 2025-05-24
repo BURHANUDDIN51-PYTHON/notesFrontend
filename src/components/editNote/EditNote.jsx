@@ -73,13 +73,13 @@ export default function EditNote({ note, slug}) {
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold text-gray-800 dark:text-white font-heading">Edit Note</h1>
+          <h1 className="text-2xl font-bold text-gray-800 dark:text-white font-heading mx-auto md:m-0">Edit Note</h1>
           <button
             type="submit"
             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-transform hover:scale-105"
           >
             <i className="fas fa-save"></i>
-            Save Edit
+            Save Changes
           </button>
         </div>
 

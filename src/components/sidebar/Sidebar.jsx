@@ -23,7 +23,7 @@ export default function Sidebar({ activeCategory, setActiveCategory }) {
         // Only update sidebar if width changed
         previousWidth = window.innerWidth;
 
-        if (window.innerWidth < 1024) {
+        if (window.innerWidth < 768) {
           setIsCollapsed(true);
         } else {
           setIsCollapsed(false);
@@ -78,7 +78,7 @@ export default function Sidebar({ activeCategory, setActiveCategory }) {
       {/* Hamburger menu for mobile */}
       <button 
         onClick={() => setIsCollapsed(!isCollapsed)}
-        className="sm:hidden fixed top-4 left-4 z-50 p-2 rounded-lg bg-blue-600 text-white"
+        className="md:hidden fixed top-4 left-4 z-50 p-2 rounded-lg bg-blue-600 text-white"
       >
         <i className="fas fa-bars"></i>
       </button>
