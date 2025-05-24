@@ -2,7 +2,6 @@ import { useSearch } from "../../context/searchContext";
 
 export default function SearchBar() {
   const { searchTerm, handleSearch} = useSearch();
-
   return (
     <div className="px-4 pb-4">
       <div className="relative">

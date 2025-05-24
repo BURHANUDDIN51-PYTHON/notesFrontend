@@ -14,7 +14,14 @@ export default function Sidebar({ activeCategory, setActiveCategory }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  
+  const [isTyping, setIsTyping] = useState(false)
+
+  // Optional: Close sidebar only if not typing
+  const handleSidebarToggle = () => {
+    if (!isTyping) {
+      setIsCollapsed(!isSidebarOpen);
+    }
+  };
 
   // Add useEffect to handle screen resize
   useEffect(() => {
@@ -25,6 +32,21 @@ export default function Sidebar({ activeCategory, setActiveCategory }) {
     window.addEventListener('resize', handleResize);
     handleResize(); // Check initial size
 
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const initialViewportHeight = window.innerHeight;
+
+    const handleResize = () => {
+      const newHeight = window.innerHeight;
+      if (newHeight < initialViewportHeight * 0.7) {
+        // Keyboard opened → force sidebar to stay open
+        setIsCollapsed(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
@@ -154,12 +176,12 @@ export default function Sidebar({ activeCategory, setActiveCategory }) {
         </button>
       </div>
        {/* Overlay for mobile */}
-      {!isCollapsed && (
+      {/* {!isCollapsed && (
         <div 
           className="fixed inset-0  bg-gray-800/60 md:hidden z-30"
           onClick={() => setIsCollapsed(true)}
         ></div>
-      )}
+      )} */}
     </>
    
   );
