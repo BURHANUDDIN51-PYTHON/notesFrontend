@@ -79,7 +79,7 @@ export default function EditNote({ note, slug}) {
             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-transform hover:scale-105"
           >
             <i className="fas fa-save"></i>
-            Save Changes
+            Save Edit
           </button>
         </div>
 

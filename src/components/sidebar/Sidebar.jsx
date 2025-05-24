@@ -76,7 +76,7 @@ export default function Sidebar({ activeCategory, setActiveCategory }) {
       {/* Hamburger menu for mobile */}
       <button 
         onClick={() => setIsCollapsed(!isCollapsed)}
-        className="md:hidden fixed top-4 left-4 z-50 p-2 rounded-lg bg-blue-600 text-white"
+        className="sm:hidden fixed top-4 left-4 z-50 p-2 rounded-lg bg-blue-600 text-white"
       >
         <i className="fas fa-bars"></i>
       </button>
@@ -99,7 +99,7 @@ export default function Sidebar({ activeCategory, setActiveCategory }) {
           )}
           <ThemeToggle />
         </div>
-        {!isCollapsed && <SearchBar />}
+        {!isCollapsed && <SearchBar  setIsCollapsed={setIsCollapsed} isCollapsed={isCollapsed}/>}
         
         <div className="flex-1 overflow-y-auto px-2">
            <button
@@ -176,12 +176,12 @@ export default function Sidebar({ activeCategory, setActiveCategory }) {
         </button>
       </div>
        {/* Overlay for mobile */}
-      {/* {!isCollapsed && (
+      {!isCollapsed && (
         <div 
           className="fixed inset-0  bg-gray-800/60 md:hidden z-30"
           onClick={() => setIsCollapsed(true)}
         ></div>
-      )} */}
+      )}
     </>
    
   );
